@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/products/';
+const API_URL = 'https://back-p5.vercel.app/api/products/';
 
 const fetchProduct = async (productId) => {
   let res = await fetch(API_URL + productId)
