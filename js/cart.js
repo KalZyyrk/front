@@ -159,11 +159,10 @@ const checkIfValid = (input) => {
   const validRegexAddress = /^[a-zA-Z0-9àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ\s\,\'\-]*$/
 
   const currentInput = document.getElementById(input.name);
-  const currentInputLength = currentInput.value.parse(' ').length
 
   const inputErrMsg = document.getElementById(currentInput.name + "ErrorMsg")
 
-  debugger
+
   switch (currentInput.name) {
     case 'firstName' || 'lastName':
       if (!validRegex.test(currentInput.value)) {
@@ -180,7 +179,7 @@ const checkIfValid = (input) => {
       }
       break;
     case 'address':
-      if (!validRegexAddress.test(currentInput.value) || !(currentInputLength > 2)) {
+      if (!validRegexAddress.test(currentInput.value)) {
         inputErrMsg.textContent = "Le champ doit contenir un format d'adresse valide et au moins 2 mots"
         inputErrMsg.style.color = "orange"
         return true
